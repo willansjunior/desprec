@@ -17,7 +17,7 @@
                 layout="@layout/resumo_card" />
 
         <ListView
-                android:id="@+id/lista_transacoes_listview"
+                android:id="@+id/lv_transacoes"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_alignBottom="@id/lista_transacoes_resumo"
