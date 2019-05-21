@@ -17,5 +17,8 @@ fun BigDecimal.formatCurrent(context: Context) : String {
             context.resources.configuration.locale.country
         )
     )
-    return currencyInstance.format(this).replace("R$", "R$ ")
+    return currencyInstance
+        .format(this)
+        .replace("R$", "R$ ")
+        .replace("-R$ ", "R$ -")
 }
