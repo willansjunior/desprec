@@ -44,11 +44,16 @@ class ResumoView(private val view : View) {
         }
     }
 
+    private fun somaPorTipo(tipo: TipoTransacao, list : List<Transacao>): BigDecimal {
+        return BigDecimal(list.filter { it.tipo == tipo }
+            .sumByDouble { it.valor.toDouble() })
+    }
+
     private fun extrairCor(total: BigDecimal): Int {
-        if (total >= BigDecimal.ZERO) {
-            return COR_RECEITA
+        return if (total >= BigDecimal.ZERO) {
+            COR_RECEITA
         } else {
-            return COR_DESPESA
+            COR_DESPESA
         }
     }
 
